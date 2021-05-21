@@ -9,6 +9,11 @@ body{
     padding: 0;
 }
 
+a{
+    text-decoration: none;
+    color:black;
+}
+
 p{
     font-weight: 300;
     font-size: 1.1em;
@@ -21,6 +26,12 @@ h2{
 h3{
     font-size: 1em;
     font-weight: 500;
+}
+
+h4{
+    font-weight: 500;
+    font-size: 0.9em;
+    margin-top: 8px;
 }
 
 span{
@@ -129,4 +140,61 @@ span{
 
 .concept__card:last-child .concept__icon{
     color: #9356DC;
+}
+
+
+/*section restaurants*/
+.restaurant__card{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 250px;
+    margin: 15px auto;
+    background-color: white;
+    line-height: 10px;
+    border-radius:  15px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.13);
+    position: relative;
+}
+
+.restaurant__card img{
+    height: 175px;
+    width: 100%;
+    object-fit: cover;
+    border-radius:15px 15px 0 0;
+}
+
+.restaurant__card__insert{
+    background-color: #99e2d0;
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 2.5px;
+    color: hsl( 165 85% 30%);
+    text-align: center;
+}
+
+.like-btn{
+    color: #000;
+    position: absolute;
+    right: 25px;
+    bottom: 30px;
+    font-size: 1.7em;
+    font-weight: 100;
+    -webkit-text-stroke: 1.5px white;
+    
+}
+
+.restaurant{
+    background-color: rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.restaurant__card h3,p{
+    padding-left:15px;
 }
