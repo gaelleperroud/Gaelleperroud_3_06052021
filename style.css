@@ -5,10 +5,16 @@ h1{
     font-weight: 100;
 } 
 
+html, body{
+    height: 100%;
+}
+
 body{
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 a{
@@ -41,9 +47,14 @@ span{
     font-size: 0.9em;
 }
 
+.content {
+    flex: 1 0 auto;
+}
+
+/*page d'accueil*/
 
 /*header*/
-#logo{
+#index__logo{
     display: block;
     width: 45%;
     height: 30px;
@@ -82,8 +93,7 @@ span{
     padding-right: 20px;
 }
 
-.btn{
-    width: 65%;
+.btn{   
     height: 50px;
     border-radius: 25px;
     border: none;
@@ -91,11 +101,14 @@ span{
     font-weight: 500;
     color: #fff;
     background: linear-gradient(to left top, #9356DC, #FF79DA);
-    margin-top: 10px;
-    margin-bottom: 30px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
+.introduction .btn{
+    width: 65%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
 /*section concept*/
 .concept{
     width: 90%;
@@ -237,6 +250,10 @@ span{
 }
 
 /*footer*/
+.footer {
+    flex-shrink: 0;
+  }
+
 footer{
     background-color: rgba(0, 0, 0, 0.8); 
     color: white;
@@ -285,3 +302,125 @@ ul :nth-child(2) .footer__icon{
     font-size: 0.6em;
 }
 
+/*page de menu*/
+
+/*header*/
+.header__menu{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 55px;
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+#menu__logo{
+    width: 150px;
+    height: 30px;
+    padding-left: 75px;
+}
+
+.header__icon{
+    font-size: 1.2em;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/*section du menu*/
+.menu__bloc{
+    background-color: hsl(0, 0%, 95%);
+}
+.menu__picture img{
+    width: 100%;
+    height: 260px; 
+}
+
+.menu__section{
+    position: relative;
+    z-index: 2;
+    border-radius: 50px 50px 0 0;
+    background-color: hsl(0, 0%, 95%);
+    margin-top: -55px;
+}
+
+.menu__head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px 0 20px; 
+}
+
+.menu__head h1{
+    font-size: 1.8em;
+}
+
+h1+.like-btn{
+    position:static;
+}
+
+.menu h2{
+    display: block;
+    width: 40px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.75);
+    font-weight: 400;
+    font-size: 1em;
+    border-bottom: 3px solid #99e2d0;
+    padding-bottom: 5px;
+    margin-left: 20px;
+}
+
+.menu__card{
+    display: flex;
+    flex-direction: column; 
+    padding-left: 10px; 
+    width: 280px;
+}
+
+.menu__card p{
+    font-size: 0.9em;
+    font-weight: 300;
+    color:rgba(0, 0, 0, 0.85);
+    margin: 0;
+    
+}
+
+.menu__card h3{
+    width: 100%;
+    margin-top: 15px;
+    font-size: 1.15em;
+    margin-bottom: 5px;
+}
+
+.menu__price{
+    font-size: 1.1em;
+    color:rgba(0, 0, 0, 0.7);
+    padding-top: 20px;
+    width: 70px;
+}
+
+.menu__card--active{
+    border-radius: 15px;
+    background-color: #fff;
+    height: 70px;
+    margin: 15px 3.5%;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.13);
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.menu__section .check-btn{
+    border-radius: 0 15px 15px 0;
+    color: #fff;
+    background-color: #99e2d0;
+    padding: 27px 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu__bloc .btn{
+    width: 50%;
+    margin: 50px 25% 80px 25%;    
+    
+}
