@@ -5,16 +5,10 @@ h1{
     font-weight: 100;
 } 
 
-html, body{
-    height: 100%;
-}
-
 body{
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
 }
 
 a{
@@ -47,21 +41,32 @@ span{
     font-size: 0.9em;
 }
 
-.content {
-    flex: 1 0 auto;
+#page{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    flex-grow: 1;
 }
 
 /*page d'accueil*/
 
 /*header*/
-#index__logo{
+#logo{
     display: block;
-    width: 45%;
+    width: 160px;
     height: 30px;
-    margin: 25px auto 0 auto;
+    margin: 20px auto 0 auto;
 }
 
-
+/*premiere section*/
+.introduction__section{
+    background-color: rgba(0, 0, 0, 0.04);
+    width: 100%;
+}
+ 
 /* bloc location de la premiere section*/
 .location{
     background-color: rgba(0, 0, 0, 0.07);
@@ -82,7 +87,7 @@ span{
 .introduction{
     text-align: center;
     padding: 15px 30px;
-    background-color: rgba(0, 0, 0, 0.04);
+    
 }
 
 .introduction p{
@@ -105,10 +110,12 @@ span{
 }
 
 .introduction .btn{
-    width: 65%;
+    width: 220px;
     margin-top: 10px;
     margin-bottom: 30px;
 }
+
+
 /*section concept*/
 .concept{
     width: 90%;
@@ -139,7 +146,6 @@ span{
     font-size: 0.9em;
     font-weight: 500;
     margin-left: -12.5px;
-
 }
 
 .concept__icon{
@@ -230,7 +236,6 @@ span{
     justify-content: flex-start;
     width: 100%;
     height: 1275px;
-
 }
 
 .restaurant__card h3{
@@ -249,10 +254,9 @@ span{
     margin-top: 70px;
 }
 
+
 /*footer*/
-.footer {
-    flex-shrink: 0;
-  }
+
 
 footer{
     background-color: rgba(0, 0, 0, 0.8); 
@@ -305,27 +309,26 @@ ul :nth-child(2) .footer__icon{
 /*page de menu*/
 
 /*header*/
-.header__menu{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 55px;
-    margin-left: 20px;
-    padding-top: 10px;
-}
 
-#menu__logo{
-    width: 150px;
-    height: 30px;
-    padding-left: 75px;
-}
 
 .header__icon{
     font-size: 1.2em;
     color: rgba(0, 0, 0, 0.8);
 }
 
+
 /*section du menu*/
+.header__menu{
+    position: relative;
+    height: 60px;
+}
+
+.header__icon{
+    position: absolute;
+    top: 25px;
+    left: 20px;
+}
+
 .menu__bloc{
     background-color: hsl(0, 0%, 95%);
 }
@@ -377,11 +380,10 @@ h1+.like-btn{
 }
 
 .menu__card p{
-    font-size: 0.9em;
+    font-size: 0.95em;
     font-weight: 300;
     color:rgba(0, 0, 0, 0.85);
-    margin: 0;
-    
+    margin: 0;  
 }
 
 .menu__card h3{
@@ -392,10 +394,13 @@ h1+.like-btn{
 }
 
 .menu__price{
-    font-size: 1.1em;
     color:rgba(0, 0, 0, 0.7);
     padding-top: 20px;
-    width: 70px;
+    width: 40px;
+}
+
+.menu__price span{
+    font-weight: 700;
 }
 
 .menu__card--active{
@@ -406,9 +411,7 @@ h1+.like-btn{
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.13);
     display: flex;
     justify-content: space-between;
-
 }
-
 
 .menu__section .check-btn{
     border-radius: 0 15px 15px 0;
@@ -421,6 +424,85 @@ h1+.like-btn{
 
 .menu__bloc .btn{
     width: 50%;
-    margin: 50px 25% 80px 25%;    
-    
+    margin: 50px 25% 80px 25%;       
+}
+
+
+/* format tablette 576 à 992px*/
+@media (min-width: 576px) and (max-width: 1199px){
+
+    /*page d'accueil*/
+    .concept__card{
+        max-width: 490px;
+    }
+
+    .concept{
+        width: 490px;
+    }
+
+    .restaurant-card-panel{
+        display: flex;
+        flex-flow: row wrap;
+        margin-left: 2.5%; 
+    }
+
+    .restaurant__card{
+        width: 42.5%;
+        margin-left: 2.5%;
+    }
+
+    .restaurant{
+        height: 750px;
+    }
+   
+}
+
+
+
+/*format desktop 1200+px*/
+@media (min-width: 1200px){
+
+    /*page d'accueil*/
+    .concept{
+        width: 100%;
+        display:flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .concept-card-panel{
+        display: flex;
+        justify-content: flex-start;
+        width: 75%;
+    }
+
+    .concept__card{
+        width: 27%;
+        max-width: 500px;
+        margin-left: 50px;   
+    }
+
+    .concept h2{
+        padding-left: 5%; 
+        padding-top: 25px;
+    }
+
+    .concept__icon{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .restaurant-card-panel{
+        display: flex;
+        margin-left: 4%;
+    }
+
+    .restaurant__card{
+        width: 22%;
+        margin: 1%;
+    }
+
+    .restaurant{
+        height: 500px;
+    }
 }
