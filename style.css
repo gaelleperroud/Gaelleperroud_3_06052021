@@ -297,7 +297,7 @@ span{
 
 .restaurant__card .fa-stack {
     position: absolute;
-    width: 25px;
+    width: 28px;
     right: 25px;
     bottom: 20px;
     font-size: 1.5em;
@@ -476,8 +476,8 @@ h1+.like-btn{
 
 .menu__card{
     display: flex;
-    flex-direction: column; 
-    width: 80%;   
+    flex-direction: column;
+    width: 80%;  
 }
 
 .menu__card p{
@@ -506,7 +506,7 @@ h1+.like-btn{
 .menu__price{
     color:rgba(0, 0, 0, 0.7);
     padding-top: 20px;
-    width: 15%;
+    width: 50px;
     text-align: center;
     
 }
@@ -531,31 +531,42 @@ h1+.like-btn{
     margin: 15px 3.5%;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.13);
     display: flex;
+    justify-content: space-between;
     overflow: hidden;
     cursor: pointer;
     
 }
 
 .check__box{
-    visibility: collapse;
     color: #fff;
     background-color: #99e2d0;
-    padding: 27px 20px;
-    transform: translateX(70px);
-    transition: transform 1.2s;
-   
+    transform: translateX(70px); 
+    transition: transform 1.2s;   
 }
+
+
 
 .menu__card--active:hover .check__box{
     transform: translateX(0);
-    visibility: visible;
-    
+    padding: 27px 20px;        
 }
 
 .menu__card--active:hover .fas{
     animation:  rotation .8s .4s both;
 }
 
+.menu__card--active:hover .menu__tag{
+    animation: tag-slide .5s both;
+}
+
+@keyframes tag-slide{
+    from{
+        width: 100%;
+    }
+    to{
+        width: 80%;
+    }
+}
 
 @keyframes rotation{
     from{
