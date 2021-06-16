@@ -45,6 +45,23 @@ span{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    animation: bloc-page 150ms 1850ms both;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+@keyframes bloc-page{
+    from{
+        opacity: 0;
+    }
+    
+    to{
+        opacity:1;
+    }
 }
 
 .content{
@@ -52,6 +69,55 @@ span{
 }
 
 /*page d'accueil*/
+
+/*loading-spinner*/
+.loading__spinner{
+    background: -webkit-linear-gradient(#9356DC, #FF79DA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 15em;
+    animation: loading-wheel 1850ms 100ms both;
+    margin-top: 100px;
+}
+
+.loading{
+    text-align: center;
+    width: 100%;    
+}
+
+@keyframes loading-wheel{
+    0%{
+        transform: rotate(0deg);
+        transform: translateX(0);
+        opacity: 1;
+    }
+    20%{
+        transform: rotate(160deg);
+    }
+    
+    45%{
+        transform: rotate(360deg);
+    }
+    70%{
+        transform: rotate(560deg);
+        opacity: 1;
+
+    }
+    
+    90%{
+        
+        opacity: 0.7;
+    }
+    95%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: rotate(800deg);
+        transform: translateX(-9999px);
+        opacity: 0.5;
+    }
+}
+
 
 /*header*/
 #logo{
@@ -107,6 +173,30 @@ span{
     color: #fff;
     background: linear-gradient(to left top, #9356DC, #FF79DA);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.btn::after{
+    content:"";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: 25px;
+    background: linear-gradient(to left top, #9356DC, #FF79DA);
+    filter: brightness(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    z-index: -1;
+    transition: opacity 250ms;
+}
+
+.btn:hover::after{
+    opacity: 1;
+    border-radius: 25px;
 }
 
 .introduction .btn{
@@ -204,29 +294,29 @@ span{
     text-align: center;
 }
 
-.like-btn{
-    color: #000;
+
+.restaurant__card .fa-stack {
     position: absolute;
+    width: 25px;
     right: 25px;
-    bottom: 30px;
-    font-size: 1.7em;
-    font-weight: 100;
-    -webkit-text-stroke: 1.5px white;
-    cursor: pointer;   
+    bottom: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 
-.like-btn--active{
-    position: absolute;
-    right: 25px;
-    bottom: 30px;
-    font-size: 1.7em;
-    cursor: pointer; 
-    color: #9356dc;
-    display: block;
-    background: -webkit-linear-gradient(#9356dc, #ff79da);
+.fa-stack .like-btn__inside{
+    opacity: 0;
+}
+
+.fa-stack:hover .like-btn, .like-btn__inside{
+    background: -webkit-linear-gradient(#9356DC, #FF79DA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    scale: 0;
+}
+
+.fa-stack:hover .like-btn__inside{
+    opacity: 1;
+    transition: 1600ms;
 }
 
 .restaurant{
@@ -308,8 +398,13 @@ ul :nth-child(2) .footer__icon{
 
 /*page de menu*/
 
-/*header*/
+#page__restaurant{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
+/*header*/
 
 .header__icon{
     font-size: 1.2em;
@@ -349,15 +444,22 @@ ul :nth-child(2) .footer__icon{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px 0 20px; 
+    padding: 10px 30px 0 20px; 
 }
 
 .menu__head h1{
     font-size: 1.8em;
 }
 
+.menu__head .fa-stack{
+    font-size: 1.5em;
+    width: 25px;
+    cursor: pointer;
+}
+
 h1+.like-btn{
     position:static;
+    color: hsl(0, 0%, 95%);
 }
 
 .menu h2{
@@ -369,39 +471,58 @@ h1+.like-btn{
     font-size: 1em;
     border-bottom: 3px solid #99e2d0;
     padding-bottom: 5px;
-    margin-left: 20px;
+    margin-left: 4.5%;
 }
 
 .menu__card{
     display: flex;
     flex-direction: column; 
-    padding-left: 10px; 
-    width: 280px;
+    width: 80%;   
 }
 
 .menu__card p{
     font-size: 0.95em;
     font-weight: 300;
     color:rgba(0, 0, 0, 0.85);
-    margin: 0;  
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+     
 }
 
 .menu__card h3{
-    width: 100%;
     margin-top: 15px;
     font-size: 1.15em;
     margin-bottom: 5px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    
 }
 
 .menu__price{
     color:rgba(0, 0, 0, 0.7);
     padding-top: 20px;
-    width: 40px;
+    width: 15%;
+    text-align: center;
+    
 }
 
 .menu__price span{
     font-weight: 700;
 }
+
+.menu__tag{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 10px;
+}
+
 
 .menu__card--active{
     border-radius: 15px;
@@ -410,25 +531,74 @@ h1+.like-btn{
     margin: 15px 3.5%;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.13);
     display: flex;
-    justify-content: space-between;
+    overflow: hidden;
+    cursor: pointer;
+    
 }
 
-.menu__section .check-btn{
-    border-radius: 0 15px 15px 0;
+.check__box{
+    visibility: collapse;
     color: #fff;
     background-color: #99e2d0;
     padding: 27px 20px;
-    cursor: pointer;
-    display: none;
+    transform: translateX(70px);
+    transition: transform 1.2s;
+   
 }
+
+.menu__card--active:hover .check__box{
+    transform: translateX(0);
+    visibility: visible;
+    
+}
+
+.menu__card--active:hover .fas{
+    animation:  rotation .8s .4s both;
+}
+
+
+@keyframes rotation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
 
 .menu__bloc .btn{
     width: 50%;
-    margin: 50px 25% 80px 25%;       
+    margin: 20px 25% 80px 25%;       
+}
+
+.menu{
+    margin-bottom: 40px;
+}
+
+@keyframes delay{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.menu:first-child{
+    animation: delay 1s 500ms both;
+}
+
+.menu:nth-child(2){
+    animation: delay 1s 1s both;
+}
+
+.menu:last-child{
+    animation: delay 1s 1500ms both;
 }
 
 
-/* format tablette 576 à 992px*/
+/* format tablette 576 à 1199px*/
 @media (min-width: 576px) and (max-width: 1199px){
 
     /*page d'accueil*/
@@ -453,6 +623,47 @@ h1+.like-btn{
 
     .restaurant{
         height: 750px;
+    }
+
+    /*page de menu*/
+    .menu__picture{
+        width: 530px;
+        margin: auto;    
+    }
+
+    .menu__picture img{
+        border-radius: 50px;
+        margin-top: 20px;
+        object-fit: cover;
+    }
+
+    .menu{
+        width: 100%;
+        max-width: 570px;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+
+    .menu__section{
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .menu__head{
+        max-width: 530px;
+        margin: auto;
+        padding-left: 30px;
+    }
+
+    .menu__bloc .btn{
+        display: block;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .menu__bloc{
+        height: 1600px;
     }
    
 }
@@ -504,5 +715,52 @@ h1+.like-btn{
 
     .restaurant{
         height: 500px;
+    }
+
+    /*page de menu*/
+
+    .menu__picture{
+        width: 530px;
+        margin: auto; 
+           
+    }
+
+    .menu__picture img{
+        border-radius: 50px;
+        margin-top: 20px;
+        object-fit: cover;
+    }
+
+    .menu__section{
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .menu__panel{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;   
+    }
+
+    .menu{
+        width: 32%;
+    }
+
+    .menu__head{
+        width: 530px;
+        margin: auto;
+    }
+
+    .menu__bloc .btn{
+        display: block;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .menu__bloc{
+        height: 1000px;
     }
 }

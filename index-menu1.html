@@ -11,7 +11,7 @@
     </head>
 
     <body>
-    <div id="page"> 
+    <div id="page__restaurant"> 
 
         <header class="header__menu">
             <img src=images/logo.png alt="logo" id="logo">
@@ -26,130 +26,154 @@
                 <div class="menu__section">
                     <div class="menu__head">
                         <h1>À la française</h1>
-                        <i class="far fa-heart like-btn"></i>
-                    </div>
-                    <!--bloc des entrées-->
-                    <div class="menu">
-                        <h2>Entrées</h2>
-                        <div class="menu__card--active">
-                            <div class="menu__card">
-                                <h3>Tartare de poulpe acidulé</h3>  
-                                <p>Aux zests d'orange</p>
-                            </div>
-                            <div class="menu__price">
-                                <p><span>25€</span></p>
-                            </div>
-                            <div>
-                                <i class="fas fa-check-circle check-btn"></i>
-                            </div> 
-                        </div>       
-                        <div class="menu__card--active">
-                            <div class="menu__card">
-                                <h3>Velouté de légumes d'antan</h3>
-                                <p>Carotte, panais, topinambour</p>
-                            </div>    
-                            <div class="menu__price">
-                                <p><span>35€</span></p>
-                            </div>
-                            <div>
-                                <i class="fas fa-check-circle check-btn"></i>
-                            </div>
-                        </div>
-                        <div class="menu__card--active">
-                            <div class="menu__card">
-                                <h3>Soupe à l'oignon</h3>
-                                <p>Revisitée</p>
-                            </div>
-                            <div class="menu__price">
-                                <p><span>20€</span></p>                               
-                            </div>
-                            <div>
-                                <i class="fas fa-check-circle check-btn"></i>
-                            </div>
+                        <div class="fa-stack">
+                            <i class="fas fa-heart fa-stack-1x like-btn__inside"></i>
+                            <i class="far fa-heart fa-stack-1x like-btn"></i>                                                       
                         </div>
                     </div>
-                    <!--bloc des plats-->
-                    <div class="menu">
-                        <h2>Plats</h2>
-                        <div class="menu__card--active">
-                            <div class="menu__card">
-                                <h3>Coquilles Saint-Jacques</h3>
-                                <p>Accompagnées d'une purée de panais</p>
+                    <div class="menu__panel">
+                        <!--bloc des entrées-->
+                        <div class="menu">
+                            <h2>Entrées</h2>
+                            <div class="menu__card--active">
+                                <div class="menu__tag">
+                                    <div class="menu__card">
+                                        <h3>Tartare de poulpe acidulé</h3>  
+                                        <p>Aux zests d'orange</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p><span>25€</span></p>
+                                    </div>
+                                </div>
+                                <div class="check__box">
+                                    <i class="fas fa-check-circle"></i>
+                                </div> 
+                            </div>       
+                            <div class="menu__card--active">
+                                <div class="menu__tag">
+                                    <div class="menu__card">
+                                        <h3>Velouté de légumes d'antan</h3>
+                                        <p>Carotte, panais, topinambour</p>
+                                    </div>    
+                                    <div class="menu__price">
+                                        <p><span>35€</span></p>
+                                    </div>
+                                </div>
+                                <div class="check__box">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
-                            <div class="menu__price">
-                                <p><span>40€</span></p>
-                            </div>                        
-                            <div>
-                                <i class="fas fa-check-circle check-btn"></i>
-                            </div>
-                        </div>
-                        <div class="menu__card--active">
-                            <div class="menu__card">
-                                <h3>Magret de canard</h3>
-                                <p>Et parmentier de pommes de terre</p>
-                            </div>
-                            <div class="menu__price">
-                                <p><span>35€</span></p>
-                            </div>
-                            <div>
-                                <i class="fas fa-check-circle check-btn"></i>
-                            </div>
-                        </div>
-                        <div class="menu__card--active">
-                            <div class="menu__card">
-                                <h3>Pigeonneau d’Ille-et-Vilaine</h3>
-                                <p>Sur son lit de gnocchis aux légumes</p>
-                            </div>
-                            <div class="menu__price">
-                                <p><span>44€</span></p>
-                            </div>
-                            <div>
-                                <i class="fas fa-check-circle check-btn"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!--bloc des desserts-->
-                    <div class="menu">
-                        <h2>Desserts</h2>
-                        <div class="menu__card--active">
-                            <div class="menu__card">
-                                <h3>Pétales de violettes glacés</h3>
-                                <p>Et purée de noisettes</p>
-                            </div>
-                            <div class="menu__price">
-                                <p><span>18€</span></p>
-                            </div>
-                            <div>
-                                <i class="fas fa-check-circle check-btn"></i>
+                            <div class="menu__card--active">
+                                <div class="menu__tag">
+                                    <div class="menu__card">
+                                        <h3>Soupe à l'oignon</h3>
+                                        <p>Revisitée</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p><span>20€</span></p>                               
+                                    </div>
+                                </div>
+                                <div class="check__box">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
                         </div>
-                        <div class="menu__card--active">
-                            <div class="menu__card">
-                                <h3>Fondant au chocolat</h3>
-                                <p>Revisité</p>
+                        <!--bloc des plats-->
+                        <div class="menu">
+                            <h2>Plats</h2>
+                            <div class="menu__card--active">
+                                <div class="menu__tag">
+                                    <div class="menu__card">
+                                        <h3>Coquilles Saint-Jacques</h3>
+                                        <p>Accompagnées d'une purée de panais</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p><span>40€</span></p>
+                                    </div>
+                                </div>                        
+                                <div class="check__box">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
-                            <div class="menu__price">
-                                <p><span>22€</span></p>
+                            <div class="menu__card--active">
+                                <div class="menu__tag">
+                                    <div class="menu__card">
+                                        <h3>Magret de canard</h3>
+                                        <p>Et parmentier de pommes de terre</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p><span>35€</span></p>
+                                    </div>  
+                                </div>
+                                <div class="check__box">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
-                            <div>
-                                <i class="fas fa-check-circle check-btn"></i>
+                            <div class="menu__card--active">
+                                <div class="menu__tag">
+                                    <div class="menu__card">
+                                        <h3>Pigeonneau d’Ille-et-Vilaine</h3>
+                                        <p>Sur son lit de gnocchis aux légumes</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p><span>44€</span></p>
+                                    </div>  
+                                </div>
+                                <div class="check__box">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
                         </div>
-                        <div class="menu__card--active">
-                            <div class="menu__card">
-                                <h3>Millefeuille croustillant</h3>
-                                <p>Myrtilles et pâte d’amande</p>
+                        <!--bloc des desserts-->
+                        <div class="menu">
+                            <h2>Desserts</h2>
+                            <div class="menu__card--active">
+                                <div class="menu__tag">
+                                    <div class="menu__card">
+                                        <h3>Pétales de violettes glacés</h3>
+                                        <p>Et purée de noisettes</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p><span>18€</span></p>
+                                    </div>
+                                </div>
+                                <div class="check__box">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
-                            <div class="menu__price">
-                                <p><span>23€</span></p>
+                            <div class="menu__card--active">
+                                <div class="menu__tag">
+                                    <div class="menu__card">
+                                        <h3>Fondant au chocolat</h3>
+                                        <p>Revisité</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p><span>22€</span></p>
+                                    </div>  
+                                </div>
+                                <div class="check__box">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
-                            <div>
-                                <i class="fas fa-check-circle check-btn"></i>
+                            <div class="menu__card--active"> 
+                                <div class="menu__tag">
+                                    <div class="menu__card">
+                                        <h3>Millefeuille croustillant</h3>
+                                        <p>Myrtilles et pâte d’amande</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p><span>23€</span></p>
+                                    </div>
+                                </div>
+                                <div class="check__box">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <button class="btn">Commander</button>
+                
             </section>
         </div>
 
