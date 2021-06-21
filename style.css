@@ -506,9 +506,8 @@ h1+.like-btn{
 .menu__price{
     color:rgba(0, 0, 0, 0.7);
     padding-top: 20px;
-    width: 50px;
+    width: 30px;
     text-align: center;
-    
 }
 
 .menu__price span{
@@ -541,14 +540,14 @@ h1+.like-btn{
     color: #fff;
     background-color: #99e2d0;
     transform: translateX(70px); 
-    transition: transform 1.2s;   
+    transition: transform 1.2s;
+    padding: 27px 0;      
 }
-
 
 
 .menu__card--active:hover .check__box{
     transform: translateX(0);
-    padding: 27px 20px;        
+    padding: 27px 20px;      
 }
 
 .menu__card--active:hover .fas{
