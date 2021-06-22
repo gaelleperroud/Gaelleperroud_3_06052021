@@ -444,7 +444,7 @@ ul :nth-child(2) .footer__icon{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px 0 20px; 
+    padding: 10px 10% 0 20px; 
 }
 
 .menu__head h1{
@@ -453,7 +453,7 @@ ul :nth-child(2) .footer__icon{
 
 .menu__head .fa-stack{
     font-size: 1.5em;
-    width: 25px;
+    width: 30px;
     cursor: pointer;
 }
 
@@ -477,7 +477,8 @@ h1+.like-btn{
 .menu__card{
     display: flex;
     flex-direction: column;
-    width: 80%;  
+    width: 100%; 
+    min-width: 30%; 
 }
 
 .menu__card p{
@@ -506,7 +507,7 @@ h1+.like-btn{
 .menu__price{
     color:rgba(0, 0, 0, 0.7);
     padding-top: 20px;
-    width: 30px;
+    width: 60px;
     text-align: center;
 }
 
@@ -514,13 +515,6 @@ h1+.like-btn{
     font-weight: 700;
 }
 
-.menu__tag{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    width: 100%;
-    padding-left: 10px;
-}
 
 
 .menu__card--active{
@@ -530,48 +524,39 @@ h1+.like-btn{
     margin: 15px 3.5%;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.13);
     display: flex;
-    justify-content: space-between;
     overflow: hidden;
     cursor: pointer;
+    padding-left: 10px;
     
+}
+
+.menu__check{
+    display: flex;
+    justify-content: flex-end;
 }
 
 .check__box{
     color: #fff;
     background-color: #99e2d0;
-    transform: translateX(70px); 
-    transition: transform 1.2s;
-    padding: 27px 0;      
+    line-height: 70px;
+    width: 0;
+    transition: width 1s;
+    text-align: center;     
 }
 
-
 .menu__card--active:hover .check__box{
-    transform: translateX(0);
-    padding: 27px 20px;      
+    width: 60px;
 }
 
 .menu__card--active:hover .fas{
-    animation:  rotation .8s .4s both;
-}
-
-.menu__card--active:hover .menu__tag{
-    animation: tag-slide .5s both;
-}
-
-@keyframes tag-slide{
-    from{
-        width: 100%;
-    }
-    to{
-        width: 80%;
-    }
+    animation:  rotation 1s  both;
 }
 
 @keyframes rotation{
     from{
         transform: rotate(0deg);
     }
-    to{
+    to{       
         transform: rotate(360deg);
     }
 }
