@@ -200,9 +200,10 @@ span{
 }
 
 .introduction .btn{
-    width: 220px;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    width: 60%;
+    max-width: 220px;
+    min-width: 100px;
+    margin: 10px auto 30px auto;
 }
 
 
@@ -316,7 +317,7 @@ span{
 
 .fa-stack:hover .like-btn__inside{
     opacity: 1;
-    transition: 1600ms;
+    transition: .5s;
 }
 
 .restaurant{
@@ -444,7 +445,7 @@ ul :nth-child(2) .footer__icon{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10% 0 20px; 
+    padding: 10px 30px 0 20px; 
 }
 
 .menu__head h1{
@@ -453,7 +454,6 @@ ul :nth-child(2) .footer__icon{
 
 .menu__head .fa-stack{
     font-size: 1.5em;
-    width: 30px;
     cursor: pointer;
 }
 
@@ -540,7 +540,7 @@ h1+.like-btn{
     background-color: #99e2d0;
     line-height: 70px;
     width: 0;
-    transition: width 1s;
+    transition: width .5s;
     text-align: center;     
 }
 
@@ -549,7 +549,7 @@ h1+.like-btn{
 }
 
 .menu__card--active:hover .fas{
-    animation:  rotation 1s  both;
+    animation:  rotation .5s both;
 }
 
 @keyframes rotation{
@@ -597,6 +597,8 @@ h1+.like-btn{
 @media (min-width: 576px) and (max-width: 1199px){
 
     /*page d'accueil*/
+    
+
     .concept__card{
         max-width: 490px;
     }
@@ -630,6 +632,10 @@ h1+.like-btn{
         border-radius: 50px;
         margin-top: 20px;
         object-fit: cover;
+    }
+
+    .menu__head .fa-stack{
+        width: 1.1em;
     }
 
     .menu{
@@ -731,6 +737,10 @@ h1+.like-btn{
         margin-top: 0;
     }
 
+    .menu__head .fa-stack{
+        width: 1.1em;
+    }
+
     .menu__panel{
         display: flex;
         flex-flow: row nowrap;
@@ -746,6 +756,7 @@ h1+.like-btn{
     .menu__head{
         width: 530px;
         margin: auto;
+        padding: 10px 0 0 0;
     }
 
     .menu__bloc .btn{
