@@ -64,9 +64,6 @@ span{
     }
 }
 
-.content{
-    flex-grow: 1;
-}
 
 /*page d'accueil*/
 
@@ -715,7 +712,7 @@ h1+.like-btn{
     }
 
     .restaurant{
-        height: 770px;
+        height: 500px;
     }
 
     /*page de menu*/
