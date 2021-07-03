@@ -394,7 +394,7 @@ ul :nth-child(2) .footer__icon{
     font-size: 0.6em;
 }
 
-/*page de menu*/
+/*page de menu*/ 
 
 #page__restaurant{
     min-height: 100vh;
@@ -568,25 +568,34 @@ h1+.like-btn{
     margin-bottom: 40px;
 }
 
+.menu__panel{
+    overflow: hidden;
+}
+
 @keyframes delay{
-    from{
+    0%{
+        transform: translateY(70px);
         opacity: 0;
     }
-    to{
+    55%{
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
         opacity: 1;
     }
 }
 
 .menu:first-child{
-    animation: delay 1s 500ms both;
+    animation: delay .9s 300ms both;
 }
 
 .menu:nth-child(2){
-    animation: delay 1s 1s both;
+    animation: delay .9s .8s both;
 }
 
 .menu:last-child{
-    animation: delay 1s 1500ms both;
+    animation: delay .9s 1300ms both;
 }
 
 
